@@ -1,0 +1,85 @@
+h2 {
+	margin: 0 0 20px;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1.35rem;
+	letter-spacing: -0.03em;
+}
+
+:host > p {
+	margin: 0;
+	padding: 36px 24px;
+	border: 1px dashed #bac8ba;
+	border-radius: 16px;
+	color: var(--muted);
+	text-align: center;
+}
+
+.expense-card {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 12px 18px;
+	align-items: center;
+	margin-bottom: 12px;
+	padding: 20px 22px;
+	border: 1px solid rgba(223, 229, 220, 0.9);
+	border-radius: 14px;
+	background: var(--surface);
+	box-shadow: 0 8px 24px rgba(32, 57, 43, 0.05);
+	transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.expense-card:hover {
+	box-shadow: 0 12px 28px rgba(32, 57, 43, 0.1);
+	transform: translateY(-2px);
+}
+
+.expense-card strong:first-child {
+	display: block;
+	margin-bottom: 5px;
+	color: var(--mint-deep);
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1.05rem;
+}
+
+.expense-card p {
+	margin: 0 0 7px;
+	color: var(--ink);
+}
+
+.expense-card small {
+	color: var(--muted);
+	font-size: 0.78rem;
+}
+
+.expense-card > strong {
+	align-self: start;
+	color: var(--ink);
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1.15rem;
+}
+
+.expense-card > div:last-child {
+	grid-column: 1 / -1;
+	padding-top: 12px;
+	border-top: 1px solid #edf0eb;
+}
+
+button {
+	padding: 5px 10px;
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	color: var(--mint-deep);
+	background: transparent;
+	cursor: pointer;
+	font-size: 0.78rem;
+	font-weight: 700;
+}
+
+button + button {
+	margin-left: 7px;
+	color: #bd4d35;
+}
+
+button:hover {
+	background: #edf5ee;
+}
