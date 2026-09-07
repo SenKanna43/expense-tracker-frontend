@@ -1,0 +1,22 @@
+<h2>Expenses</h2>
+
+@if (expenses().length === 0) {
+  <p>No expenses found.</p>
+} @else {
+  @for (expense of expenses(); track expense.id) {
+    <div class="expense-card">
+      <div>
+        <strong>{{ expense.category }}</strong>
+        <p>{{ expense.description }}</p>
+        <small>{{ expense.expenseDate }}</small>
+      </div>
+
+      <strong>₹{{ expense.amount }}</strong>
+
+      <div>
+        <button type="button" (click)="editRequested.emit(expense)">Edit</button>
+        <button type="button" (click)="deleteRequested.emit(expense)">Delete</button>
+      </div>
+    </div>
+  }
+}

@@ -1,0 +1,23 @@
+<div class="expenses-page">
+
+  <h1>Expense Tracker</h1>
+
+  <app-expense-form
+    [editingExpense]="editingExpense()"
+    (saved)="onExpenseCreated($event)"
+    (cancelled)="cancelEdit()"
+  />
+
+  @if (loading()) {
+    <p>Loading expenses...</p>
+  } @else if (error()) {
+    <p>{{ error() }}</p>
+  } @else {
+    <app-expense-list
+      [expenses]="expenses()"
+      (editRequested)="editExpense($event)"
+      (deleteRequested)="deleteExpense($event)"
+    />
+  }
+
+</div>

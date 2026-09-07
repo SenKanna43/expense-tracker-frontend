@@ -1,0 +1,63 @@
+.expenses-page {
+	width: min(1120px, calc(100% - 40px));
+	margin: 0 auto;
+	padding: 64px 0 80px;
+}
+
+h1 {
+	max-width: 620px;
+	margin: 0 0 12px;
+	color: var(--ink);
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: clamp(2.5rem, 6vw, 5rem);
+	line-height: 0.98;
+	letter-spacing: -0.06em;
+}
+
+h1::after {
+	display: block;
+	width: 76px;
+	height: 8px;
+	margin-top: 22px;
+	border-radius: 99px;
+	background: var(--coral);
+	content: '';
+}
+
+app-expense-form,
+app-expense-list {
+	display: block;
+}
+
+app-expense-form {
+	grid-area: form;
+}
+
+app-expense-list {
+	grid-area: list;
+}
+
+.expenses-page {
+	display: grid;
+	grid-template-areas:
+		'heading heading'
+		'form list';
+	grid-template-columns: minmax(280px, 0.75fr) minmax(420px, 1.25fr);
+	gap: 28px;
+}
+
+.expenses-page > h1 {
+	grid-area: heading;
+}
+
+@media (max-width: 760px) {
+	.expenses-page {
+		width: min(100% - 28px, 560px);
+		grid-template-areas:
+			'heading'
+			'form'
+			'list';
+		grid-template-columns: 1fr;
+		padding: 36px 0 56px;
+	}
+}
